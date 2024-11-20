@@ -1,0 +1,1 @@
+This is a Django Rest Framework (Back-end) built for integration of SMS (Africa's Talking) and email (Gmail) API's.

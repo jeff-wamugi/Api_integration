@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django App</title>
+</head>
+<body>
+    <div id="app"></div>
+    <h1>API  Integration</h1>
+    <script>
+        fetch('http://127.0.0.1:8000/api/send-sms/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            recipients: ['+254745544814'],
+            message: 'Jeff\'s first API message ',
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Response:', data);
+        if (data.success) {
+            const recipients = data.success.recipients;
+            alert(`Message sent successfully to: ${recipients.join(', ')}`);
+        } else {
+            alert(`Error: ${data.error}`);
+        }
+    })
+    .catch(error => console.error('Error:', error)); // handle errors
+    </script>
+</body>
+</html>
