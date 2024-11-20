@@ -2,7 +2,7 @@ This is a Django REST Framework (Back-end) built for integration of SMS (Africa'
 
 ## Project still in development
 
-# How to run
+# How to run:
 ## -> Check if you have python installed
 python --V
 
@@ -10,7 +10,7 @@ python --V
 . .venv/Scripts/activate
 
 ## -> Install Django REST Framework
-install django djangorestframework
+pip install django djangorestframework
 
 ## -> Update API key in the settings configurations with your own (Create an Africa's Talkin Account)
 
