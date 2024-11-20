@@ -1,6 +1,6 @@
 This is a Django REST Framework (Back-end) built for integration of SMS (Africa's Talking) and email (Gmail) API's.
 
-## Project still in development
+## Project still in development*
 
 # How to run:
 ## -> Check if you have python installed
