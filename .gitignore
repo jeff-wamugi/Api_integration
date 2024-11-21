@@ -1,0 +1,6 @@
+# .gitignore
+.venv
+api_integration/api/token.json
+api_integration/api/credentials.json
+*.pem
+*.key
