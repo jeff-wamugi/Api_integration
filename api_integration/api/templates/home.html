@@ -9,24 +9,28 @@
     <div id="app"></div>
     <h1>API  Integration</h1>
     <script>
-        fetch('http://127.0.0.1:8000/api/send-sms/', {
+        fetch('http://127.0.0.1:8000/api/send-notifications/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            recipients: ['+254745544814'],
-            message: 'Jeff\'s first API message ',
+            recipients_sms: ['+254745544814'],
+            recipients_email: ['jefftumuti@gmail.com', 'petermwashori@gmail.com.com'],
+            message: 'API test message Mark II ',
         }),
     })
     .then(response => response.json())
     .then(data => {
         console.log('Response:', data);
         if (data.success) {
-            const recipients = data.success.recipients;
-            alert(`Message sent successfully to: ${recipients.join(', ')}`);
-        } else {
+            const smsRecipients = data.success.sms_recipients || [];
+            const emailRecipients = data.success.email_recipients || [];
+            alert(`Message sent successfully to:\nSMS: ${smsRecipients.join(', ')}\nEmail: ${emailRecipients.join(', ')}`);
+        } else if (data.error) {
             alert(`Error: ${data.error}`);
+        } else {
+            alert('Unexpected response structure');
         }
     })
     .catch(error => console.error('Error:', error)); // handle errors

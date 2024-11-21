@@ -5,7 +5,7 @@ from rest_framework import status
 class SendSMSTestCase(APITestCase):
     def test_send_sms_success(self):
         # Define the endpoint URL
-        url = "/api/send-sms/"
+        url = "/api/send-notifications/"
         
         # Mock input data
         data = {
@@ -22,7 +22,7 @@ class SendSMSTestCase(APITestCase):
 
     def test_send_sms_missing_fields(self):
         # Define the endpoint URL
-        url = "/api/send-sms/"
+        url = "/api/send-notifications/"
         
         # Missing recipients
         data = {
