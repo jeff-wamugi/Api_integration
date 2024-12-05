@@ -4,4 +4,5 @@ api_integration/api/token.json
 api_integration/api/credentials.json
 *.pem
 *.key
+# ignore django settings.py
 api_integration/api_integration/settings.py
